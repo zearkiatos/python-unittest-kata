@@ -1,5 +1,5 @@
 import datetime
-from Community.base import Session, engine, Base
+from src.Community.base import Session, engine, Base
 from sqlalchemy import Column, Integer, String
 
 

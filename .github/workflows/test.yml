@@ -1,7 +1,7 @@
 name: Tests 🧪
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
 jobs:
   job1:
     name: Pruebas

@@ -1,0 +1,4 @@
+SQLAlchemy==2.0.5.post1
+python-dotenv==1.0.0
+coverage==7.2.1
+Faker==17.6.0

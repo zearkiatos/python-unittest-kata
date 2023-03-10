@@ -9,12 +9,19 @@ jobs:
     steps:
     - name: Checkout de repositorio
       uses: actions/checkout@v2
-    - name: Configuración de entorno de python
+    - name: Environment configuration
       uses: actions/setup-python@v2
       with:
           python-version: '3.9'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip 
+        pip install -r requirements.txt
     - name: Running tests 🧪
       id: test-running-id
       run: |
-        pip install -r requirements.txt
         make run-tests
+    - name: Coverage calculation 📊
+      id: Coverage
+      run: |
+        make run-tests-coverage

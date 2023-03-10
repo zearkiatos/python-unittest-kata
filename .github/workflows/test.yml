@@ -15,4 +15,6 @@ jobs:
           python-version: '3.9'
     - name: Running tests 🧪
       id: test-running-id
-      run: make run-tests
+      run: |
+        - pip install -r requirements.txt
+        - make run-tests

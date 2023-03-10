@@ -16,5 +16,5 @@ jobs:
     - name: Running tests 🧪
       id: test-running-id
       run: |
-        - pip install -r requirements.txt
-        - make run-tests
+        pip install -r requirements.txt
+        make run-tests

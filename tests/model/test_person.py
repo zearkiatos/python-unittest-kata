@@ -12,12 +12,11 @@ class PersonTestCase(unittest.TestCase):
         self.person3 = Person(name="Alejandra", year=25)
         self.person4 = Person(name="Diana", year=25)
         self.group = [self.person1, self.person2, self.person3]
-    
+
     def tearDown(self):
         self.session.query(Person).delete()
         self.session.commit()
         self.session.close()
-
 
     def test_constructor(self):
         self.assertEqual(self.person1.get_name(), 'Alejandra')
@@ -63,3 +62,13 @@ class PersonTestCase(unittest.TestCase):
 
         self.assertEqual(person.get_name(), 'Alejandra')
         self.assertEqual(person.get_year(), 25)
+
+    def test_find(self):
+        self.session.add(self.person2)
+        self.session.commit()
+
+        person = Person("", 0)
+        person.find('Diego', 22)
+
+        self.assertEqual(person.get_name(), 'Diego')
+        self.assertEqual(person.get_year(), 22)

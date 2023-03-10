@@ -16,7 +16,7 @@ class Person(Base):
     def set_year(self, year) -> None:
         self.year = year
 
-    def set_year(self, name) -> None:
+    def set_name(self, name) -> None:
         self.name = name
 
     def get_year(self) -> int:

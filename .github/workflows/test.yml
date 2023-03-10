@@ -21,6 +21,16 @@ jobs:
       id: test-running-id
       run: |
         make run-tests
+    - name: Validate results with errors
+      if: ${{ failure() }}
+      env:
+        ERROR_MESSAGE: One or various test failed 🔴
+      run: echo "::set-output name=answer::${ERROR_MESSAGE}"
+    - name: Validate result without errors
+      if: ${{ success() }}
+      env:
+        MESSAGE_SUCCESS: All the tests were success
+      run: echo "::set-output name=answer::${MESSAGE_SUCCESS}"
     - name: Coverage calculation 📊
       id: Coverage
       run: |

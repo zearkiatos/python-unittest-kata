@@ -4,7 +4,7 @@ on:
     branches: [ master ]
 jobs:
   job1:
-    name: Pruebas
+    name: Tests
     runs-on: ubuntu-latest
     steps:
     - name: Checkout de repositorio
